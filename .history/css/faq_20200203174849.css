@@ -10,7 +10,7 @@ html {
   box-sizing: border-box;
 }
 
-.faq {
+body {
     background: 
     radial-gradient(       
         #002642,
@@ -28,7 +28,7 @@ html {
   min-height: 100vh;
 }
 
-.faq .container {
+.container {
     margin: 0 auto;
     padding: 4rem;
     width: 48rem;

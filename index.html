@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="css/tim.css">
     <link rel="stylesheet" href="css/timeline.css">
     <link rel="stylesheet" href="css/faq.css">
+
+    <link rel="stylesheet" href="js/glide/glide.core.min.css">
+    <link rel="stylesheet" href="js/glide/glide.theme.min.css">
+    <link rel="stylesheet" href="css/galerija.css">
     
     <title>FON HAKATON 2020</title>
     <link rel="stylesheet" href="css/slider.css">
@@ -46,7 +50,26 @@
 
     <!--Janko - Galerija -->
     <div class="galerija">
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <img class="glide__slide" src="img/1.jpg" />
+            <img class="glide__slide" src="img/2.jpg" />
+            <img class="glide__slide" src="img/3.jpg" />
+          </ul>
+        </div>
 
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
+        </div>
+
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+          <button class="glide__bullet" data-glide-dir="=0"></button>
+          <button class="glide__bullet" data-glide-dir="=1"></button>
+          <button class="glide__bullet" data-glide-dir="=2"></button>
+        </div>
+      </div>
     </div>
     <!--Janko - Galerija kraj -->
 
@@ -349,6 +372,9 @@
     <script src='js/demo.js'></script>
     <script src="js/demo1.js"></script>
     <script src="js/demo2.js"></script>
+
+    <script src="js/glide/glide.min.js"></script>
+    <script src="js/galerija.js"></script>
 </body>
 
 </html>

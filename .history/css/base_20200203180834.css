@@ -41,7 +41,7 @@ main {
 	width: 100%;
 }
 
-.partneri .content {
+.content {
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -51,7 +51,7 @@ main {
 	flex-direction: column;
 }
 
-.partneri .content--fixed {
+.content--fixed {
 	position: fixed;
 	z-index: 10000;
 	top: 0;
@@ -71,7 +71,7 @@ main {
 	'github demos';
 }
 
-.partneri .content--fixed a {
+.content--fixed a {
 	pointer-events: auto;
 }
 
@@ -127,14 +127,14 @@ main {
 	body {
 		overflow: auto;
 	}
-	.partneri .content {
+	.content {
 		flex-direction: column;
 		height: auto;
 		min-height: 0;
 		padding-bottom: 10em;
 		flex-wrap: wrap;
 	}
-	.partneri .content--fixed {
+	.content--fixed {
 		position: relative;
 		z-index: 1000;
 		display: block;

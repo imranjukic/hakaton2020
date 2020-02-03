@@ -1,0 +1,92 @@
+.sve{
+    background: #002642;
+    text-align: center;
+  }
+  
+  
+  
+  .inner-width{
+    max-width: 100%;
+    margin: auto;
+    padding: 24px;
+    color: #F9711D;
+    overflow: hidden;
+  }
+  .sve h1{
+    font-size: 24px;
+    text-transform: uppercase;
+    display: inline-block;
+    border-bottom: 4px solid;
+    padding-bottom: 10px;
+  }
+  .clanTima{
+    float: left;
+    width: calc(100% / 3);
+    overflow: hidden;
+    padding: 10px 0;
+    transition: 0.4s;
+  }
+  .clanTima:hover{
+    background: #083758bb;
+  }
+  .glavni{
+   
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+    transition: 0.4s;
+  }
+  .glavni:hover{
+    background:  #08375865;
+  }
+  
+  
+  .slika{
+    width: 100px;
+    height: 100px;
+  }
+  .slika:hover{
+  
+  }
+  .imeClana{
+    margin: 12px 0;
+    text-transform: uppercase;
+  }
+  .funkcijaClana{
+    font-style: italic;
+    color: #3498db;
+  }
+  .nalozi{
+    margin-top: 12px;
+  }
+  .nalozi a{
+    margin: 0 4px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    transition: 0.4s;
+  }
+  .nalozi a:hover{
+    transform: scale(1.6);
+  }
+  .nalozi a i{
+    color: #f1f1f1;
+    line-height: 30px;
+  }
+  @media screen and (max-width:600px) {
+    
+      .clanTima{
+        float: left;
+        width: calc(100% / 2);
+        overflow: hidden;
+        padding: 10px 0;
+        transition: 0.4s;
+    }
+  
+    .imeClana{
+      margin: 12px 0;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+  
+  }

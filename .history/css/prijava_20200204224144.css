@@ -1,0 +1,170 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Alegreya Sans', sans-serif;
+
+    background-image: url(/img/pozadina.png);
+    background-repeat: no-repeat;
+
+    background: 
+    radial-gradient(       
+        #002642,
+        #000013
+    );
+}
+
+textarea {
+    resize: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+h1{
+    margin-bottom: 20px;
+    margin-top: 50px;
+    color: #42BDDE;
+}
+
+
+h4 {
+    color: #F9711D;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.form-control
+{
+    width: 600px;
+    background: #002642;
+    outline: none;
+    border: 1px solid #F9711D;
+    color: #fff;
+    font-size: 18px;
+}
+
+input
+{
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+form .submit
+{
+    background: #002642;
+    border-color: transparent;
+    color: #42BDDE;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 50px;
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+form .submit:hover
+{
+    background-color: #F9711D;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+h2 {
+    font-size: 20px;
+    color: #42BDDE;
+}
+
+h3 {
+    font-size: 18px;
+    color: #F9711D;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 0px;
+}
+
+::placeholder {
+    color: #42BDDE;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+.forma {
+    width: 625px;
+    text-align: left;
+    margin: auto;
+}
+
+.cv {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #002642;
+    outline: none;
+    border: 1px solid #F9711D;
+    color: #fff;
+    font-size: 18px;
+}
+
+.collapsible {
+    background-color: #002642;
+    color: #42BDDE;
+    cursor: pointer;
+    padding: 18px;
+    width: 40%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+  }
+  
+.active, .collapsible:hover {
+    background-color: #F9711D;
+    transition: 0.3s;
+}
+
+.content {
+padding: 0 18px;
+display: none;
+overflow: hidden;
+}
+
+@media (max-width: 650px){
+
+.content{
+    width: 300px;
+    padding: 0%;
+    margin: auto;
+}
+
+h1{
+    font-size: 25px;
+}
+
+h2{
+    width: 300px;
+    font-size: 17px;
+}
+
+.form-control, input{
+    width: 285px;
+    font-size: 15px;
+    height: 30px;
+    padding: 5px;
+}
+
+.collapsible, .submit {
+    width: 300px;
+    font-size: 17px;
+    padding: 10px;;
+}
+
+h3{
+    font-size: 15px;
+}
+
+}

@@ -1,5 +1,9 @@
 .sve{
-    background: #002642;
+  background: 
+  radial-gradient(       
+      #002642,
+      #000013
+  );
     text-align: center;
   }
   
@@ -46,7 +50,7 @@
     height: 100px;
   }
   .slika:hover{
-  
+    
   }
   .imeClana{
     margin: 12px 0;

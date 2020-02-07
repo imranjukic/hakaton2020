@@ -1,4 +1,11 @@
-.galerija {
+.galerija .glide {
   background-color: black;
   padding: 10px;
+}
+
+.galerija-tekst {
+  background-color: #002642;
+  font-size: 2em;
+  text-align: center;
+  color: white;
 }

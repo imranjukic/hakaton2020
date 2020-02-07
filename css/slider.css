@@ -90,6 +90,7 @@
 	.pieces-slider__image {
 		max-width: 300px;
 	}
+	
 }
 
 @media screen and (max-width: 55em) {
@@ -100,5 +101,17 @@
 	.pieces-slider__button {
 		width: 60px;
 		height: 60px;
+	}
+}
+@media screen and (max-width: 1140px){
+	#drugi-slider{
+		width: 100%;
+	}
+	#drugi-canvas{
+		width: 100vW;
+	}
+	.donji-red{
+		flex-direction: column;
+		justify-content: center;
 	}
 }

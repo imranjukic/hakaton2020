@@ -1,6 +1,7 @@
 <?php
 
-    $message = array();
+    // $message = array();
+    $error = false;
 
     $teamName = '';
     $oldCompetitions = '';
@@ -108,14 +109,19 @@
         if(empty($teamName) || empty($oldCompetitions) || empty($motivation) || empty($teamAdvantages) || empty($giveUpSituation) || empty($googleDriveLink) 
         || empty($member1Name) || empty($member1Email) || empty($member1Phone) || empty($member1School) || empty($member1Year)
         || empty($member2Name) || empty($member2Email) || empty($member2Phone) || empty($member2School) || empty($member2Year)
-        || empty($member3Name) || empty($member3Email) || empty($member3Phone) || empty($member3School) || empty($member3Year)
-        || empty($member4Name) || empty($member4Email) || empty($member4Phone) || empty($member4School) || empty($member4Year)){
-            $message['missingFields'] = '<p>Niste popunili sva polja.</p>';
+        || empty($member3Name) || empty($member3Email) || empty($member3Phone) || empty($member3School) || empty($member3Year)){
+            // $message['missingFields'] = '<p>Niste popunili sva polja.</p>';
+            $error = true;
         }
 
         if(!filter_var($member1Email, FILTER_VALIDATE_EMAIL) || !filter_var($member2Email, FILTER_VALIDATE_EMAIL)
-        || !filter_var($member3Email, FILTER_VALIDATE_EMAIL) || !filter_var($member4Email, FILTER_VALIDATE_EMAIL)){
-            $message['wrongEmailFormat'] = '<p><label class="text-danger">Pogrešan Email Format.</label></p>';
+        || !filter_var($member3Email, FILTER_VALIDATE_EMAIL)){
+            // $message['wrongEmailFormat'] = '<p><label class="text-danger">Pogrešan Email Format.</label></p>';
+            if(!empty($member4Email)){
+                if(!filter_var($member4Email, FILTER_VALIDATE_EMAIL)){
+                    $error = true;
+                }
+            }
         }
 
         // if(empty($email)){
@@ -127,12 +133,15 @@
         //     }
         // }
 
-        if(count($message) == 0){
+        if(!$error){
             $file = fopen('contact_data.csv', 'a');
+            $fileBUP = fopen('contact_data_BUP.csv', 'a');
+
             $numOfRows = count(file('contact_data.csv'));
 
             // if($numOfRows == 0){
                 fputcsv($file, ['Br.', 'Naziv Tima', 'Iskustvo', 'Zasto Ste Se Prijavili', 'Prednosti / Mane', 'Kada Bi Odustali', 'CV']);
+                fputcsv($fileBUP, ['Br.', 'Naziv Tima', 'Iskustvo', 'Zasto Ste Se Prijavili', 'Prednosti / Mane', 'Kada Bi Odustali', 'CV']);
             // }
 
             if($numOfRows > 1){
@@ -146,12 +155,14 @@
                 'motivation' => $motivation,
                 'teamAdvantages' => $teamAdvantages,
                 'giveUpSituation' => $giveUpSituation,
-                'googleDriveLink' => $googleDriveLink,
+                'googleDriveLink' => $googleDriveLink
             );
 
             fputcsv($file, $formData);
+            fputcsv($fileBUP, $formData);
 
             fputcsv($file, ['Br.', 'Ime i Prezime', 'Email', 'Telefon', 'Fax / Škola', 'Godina']);
+            fputcsv($fileBUP, ['Br.', 'Ime i Prezime', 'Email', 'Telefon', 'Fax / Škola', 'Godina']);
 
             $formData = array(
                 'Br.' => 1,
@@ -163,6 +174,7 @@
             );
 
             fputcsv($file, $formData);
+            fputcsv($fileBUP, $formData);
 
             $formData = array(
                 'Br.' => 2,
@@ -174,6 +186,7 @@
             );
 
             fputcsv($file, $formData);
+            fputcsv($fileBUP, $formData);
 
             $formData = array(
                 'Br.' => 3,
@@ -185,19 +198,23 @@
             );
 
             fputcsv($file, $formData);
+            fputcsv($fileBUP, $formData);
 
-            $formData = array(
-                'Br.' => 4,
-                'member4Name' => $member4Name,
-                'member4Email' => $member4Email,
-                'member4Phone' => $member4Phone,
-                'member4School' => $member4School,
-                'member4Year' => $member4Year
-            );
+            if(!empty($member4Name)){
+                $formData = array(
+                    'Br.' => 4,
+                    'member4Name' => $member4Name,
+                    'member4Email' => $member4Email,
+                    'member4Phone' => $member4Phone,
+                    'member4School' => $member4School,
+                    'member4Year' => $member4Year
+                );
+    
+                fputcsv($file, $formData);
+                fputcsv($fileBUP, $formData);
+            }
 
-            fputcsv($file, $formData);
-
-            $message['success'] = '<p><label class="text-success">Uspešno ste se prijavili za Hakaton 2020.</label></p>';
+            // $message['success'] = '<p><label class="text-success">Uspešno ste se prijavili za Hakaton 2020.</label></p>';
             // $toEmail = $email;
             $subject = 'Hakaton Prijava';
             $messageEmail = 'Uspešno ste se prijavili za FON Hakaton 2020';
@@ -242,7 +259,7 @@
             $member4Year = '';
             
         }else{
-            // echo "NAY!!!!!!!!!!!!!!!!!!!!!!!\n\n\n\n\n\n\n\n\n";
+            echo "NAY!!!!!!!!!!!!!!!!!!!!!!!\n\n\n\n\n\n\n\n\n";
         }
 
         // print_r($message);
@@ -273,9 +290,9 @@
     <h3>Svaki tim može imati 3 ili 4 člana.</h3>
 
     <div class="missing-fileds-error" style="margin-bottom: 1.5rem; color: #fff;">
-        <?php if(array_key_exists('missingFields', $message)) echo $message['missingFields']; ?>
-        <?php if(array_key_exists('wrongEmailFormat', $message)) echo $message['wrongEmailFormat']; ?>
-        <?php if(array_key_exists('success', $message)) echo $message['success']; ?>
+        <?php //if(array_key_exists('missingFields', $message)) echo $message['missingFields']; ?>
+        <?php //if(array_key_exists('wrongEmailFormat', $message)) echo $message['wrongEmailFormat']; ?>
+        <?php //if(array_key_exists('success', $message)) echo $message['success']; ?>
     </div>
 
     <form name="submit-to-google-sheet" method="POST">
@@ -283,17 +300,17 @@
         <div class="content">
             <div class="forma">
                 <h2>Naziv tima:</h2>
-                <input id="aaa" name="naziv-tima" type="text" class="form-control aaa" value="<?php echo $teamName; ?>">
+                <input name="naziv-tima" type="text" class="form-control aaa" value="<?php echo $teamName; ?>">
                 <h2>Da li ste ranije učestvovali na sličnim takmičenjima? Ako jeste, navedite na kojim i ukratko
                     opišite iskustvo.</h2>
-                <textarea id="aaa" name="iskustvo" class="form-control" rows="3"><?php echo $oldCompetitions; ?></textarea>
+                <textarea name="iskustvo" class="form-control" rows="3"><?php echo $oldCompetitions; ?></textarea>
                 <h2>Šta vas motiviše da se prijavite za učestvovanje na FON Hakatonu? Opišite svoju
                     motivaciju, očekivanja i zašto baš vaš tim treba da odaberemo.</h2>
-                <textarea id="aaa" name="zasto-ste-se-prijavili" class="form-control aaa" rows="4"><?php echo $motivation; ?></textarea>
+                <textarea name="zasto-ste-se-prijavili" class="form-control aaa" rows="4"><?php echo $motivation; ?></textarea>
                 <h2>Opišite ključne prednosti i mane vašeg tima:</h2>
-                <textarea id="aaa" name="prednost-mana" class="form-control aaa" rows="3"><?php echo $teamAdvantages; ?></textarea>
+                <textarea name="prednost-mana" class="form-control aaa" rows="3"><?php echo $teamAdvantages; ?></textarea>
                 <h2>Koja situacija bi dovela do toga da vaš tim odustane od takmičenja?</h2>
-                <textarea id="aaa" name="kako-ste-saznali" class="form-control aaa" rows="3"><?php echo $giveUpSituation; ?></textarea>
+                <textarea name="kako-ste-saznali" class="form-control aaa" rows="3"><?php echo $giveUpSituation; ?></textarea>
                 <h2>Na drajv ubacite CV svakog clana tima i unesite link tog drajva (google drive, onedrive i sl.) u naredno polje.</h2>
                 <input name="link-za-cv" type="text" class="form-control aaa" value="<?php echo $googleDriveLink; ?>">
             </div>
@@ -303,15 +320,15 @@
         <div class="content">
             <div class="forma">
                 <h2>Ime i prezime</h2>
-                <input id="aaa" name="ime-prezime1" type="text" class="form-control aaa" value="<?php echo $member1Name; ?>">
+                <input name="ime-prezime1" type="text" class="form-control aaa" value="<?php echo $member1Name; ?>">
                 <h2>E-mail</h2>
-                <input id="aaa" name="email1" type="text" class="form-control aaa" value="<?php echo $member1Email; ?>">
+                <input id="email1" name="email1" type="text" class="form-control aaa" value="<?php echo $member1Email; ?>">
                 <h2>Telefon</h2>
-                <input id="aaa" name="telefon1" type="tel" class="form-control aaa" value="<?php echo $member1Phone; ?>">
+                <input name="telefon1" type="tel" class="form-control aaa" value="<?php echo $member1Phone; ?>">
                 <h2>Fakultet/Srednja škola</h2>
-                <input id="aaa" name="faks/skola1" type="text" class="form-control aaa" value="<?php echo $member1School; ?>">
+                <input name="faks/skola1" type="text" class="form-control aaa" value="<?php echo $member1School; ?>">
                 <h2>Godina studija/razred</h2>
-                <input id="aaa" name="godina1" type="number" class="form-control aaa" value="<?php echo $member1Year; ?>">
+                <input name="godina1" type="number" class="form-control aaa" value="<?php echo $member1Year; ?>">
             </div>
         </div><br><br>
 
@@ -319,13 +336,13 @@
         <div class="content">
             <div class="forma">
                 <h2>Ime i prezime</h2>
-                <input id="aaa" name="ime-prezime2" type="text" class="form-control aaa" value="<?php echo $member2Name; ?>">
+                <input name="ime-prezime2" type="text" class="form-control aaa" value="<?php echo $member2Name; ?>">
                 <h2>E-mail</h2>
-                <input id="aaa" name="email2" type="text" class="form-control aaa" value="<?php echo $member2Email; ?>">
+                <input id="email2" name="email2" type="text" class="form-control aaa" value="<?php echo $member2Email; ?>">
                 <h2>Telefon</h2>
-                <input id="aaa" name="telefon2" type="tel" class="form-control aaa" value="<?php echo $member2Phone; ?>">
+                <input name="telefon2" type="tel" class="form-control aaa" value="<?php echo $member2Phone; ?>">
                 <h2>Fakultet/Srednja škola</h2>
-                <input id="aaa" name="faks/skola2" type="text" class="form-control aaa" value="<?php echo $member2School; ?>">
+                <input name="faks/skola2" type="text" class="form-control aaa" value="<?php echo $member2School; ?>">
                 <h2>Godina studija/razred</h2>
                 <input name="godina2" type="number" class="form-control aaa" value="<?php echo $member2Year; ?>">
             </div>
@@ -335,15 +352,15 @@
         <div class="content">
             <div class="forma">
                 <h2>Ime i prezime</h2>
-                <input id="aaa" name="ime-prezime3" type="text" class="form-control aaa" value="<?php echo $member3Name; ?>">
+                <input name="ime-prezime3" type="text" class="form-control aaa" value="<?php echo $member3Name; ?>">
                 <h2>E-mail</h2>
-                <input id="aaa" name="email3" type="text" class="form-control aaa" value="<?php echo $member3Email; ?>">
+                <input id="email3" name="email3" type="text" class="form-control aaa" value="<?php echo $member3Email; ?>">
                 <h2>Telefon</h2>
-                <input id="aaa" name="telefon3" type="tel" class="form-control aaa" value="<?php echo $member3Phone; ?>">
+                <input name="telefon3" type="tel" class="form-control aaa" value="<?php echo $member3Phone; ?>">
                 <h2>Fakultet/Srednja škola</h2>
-                <input id="aaa" name="faks/skola3" type="text" class="form-control aaa" value="<?php echo $member3School; ?>">
+                <input name="faks/skola3" type="text" class="form-control aaa" value="<?php echo $member3School; ?>">
                 <h2>Godina studija/razred</h2>
-                <input id="aaa" name="godina3" type="number" class="form-control aaa" value="<?php echo $member3Year; ?>">
+                <input name="godina3" type="number" class="form-control aaa" value="<?php echo $member3Year; ?>">
             </div>
         </div><br><br>
 
@@ -353,7 +370,7 @@
                 <h2>Ime i prezime</h2>
                 <input name="ime-prezime4" type="text" class="form-control bbb" value="<?php echo $member4Name; ?>">
                 <h2>E-mail</h2>
-                <input name="email4" type="text" class="form-control bbb" value="<?php echo $member4Email; ?>">
+                <input id="email4" name="email4" type="text" class="form-control bbb" value="<?php echo $member4Email; ?>">
                 <h2>Telefon</h2>
                 <input name="telefon4" type="tel" class="form-control bbb" value="<?php echo $member4Phone; ?>">
                 <h2>Fakultet/Srednja škola</h2>
@@ -389,36 +406,73 @@
             })
         }
 
-        // function prijava() {
-        //     var gotovo = true;
-        //     var list = document.querySelectorAll('.aaa');
-        //     for (var element of list) {
-        //         if (element.value == "") {
-        //             gotovo = false;
-        //             break;
-        //         }
-        //     }
-        //     if (gotovo) {
-        //         potvrda();
-        //         document.getElementById('dugme').style.display = 'none'
+        function prijava() {
+            var gotovo = true;
+            var list = document.querySelectorAll('.aaa');
 
-        //         Swal.fire({
-        //             text: 'Uspešno ste se prijavili!',
-        //             type: 'success',
-        //             confirmButtonText: 'Ok'
-        //         })
-        //     }
-        //     else {
-        //         event.preventDefault();
+            let validEmails = false;
+            let email1 = document.querySelector('#email1');
+            let email2 = document.querySelector('#email2');
+            let email3 = document.querySelector('#email3');
+            let email4 = document.querySelector('#email4');
 
-        //         Swal.fire({
-        //             text: 'Niste popunili sva polja!',
-        //             type: 'error',
-        //             confirmButtonText: 'Ok'
-        //         })
+            for (var element of list) {
+                if (element.value == "") {
+                    gotovo = false;
 
-        //     }
-        // }
+                    break;
+                }
+            }
+
+            if (gotovo) {
+                if(validateEmail(email1.value) && validateEmail(email2.value) && validateEmail(email3.value)){
+                    if(email4.value != ''){
+                        if(validateEmail(email4.value)){
+                            potvrda();
+                            document.getElementById('dugme').style.display = 'none'
+
+                            Swal.fire({
+                                text: 'Uspešno ste se prijavili!',
+                                type: 'success',
+                                confirmButtonText: 'Ok'
+                            })
+                        }else{
+                            event.preventDefault();
+
+                            Swal.fire({
+                                text: 'Pogrešan Email Format!',
+                                type: 'error',
+                                confirmButtonText: 'Ok'
+                            });
+                        }
+                    }
+                }else{
+                    event.preventDefault();
+
+                    Swal.fire({
+                        text: 'Pogrešan Email Format!',
+                        type: 'error',
+                        confirmButtonText: 'Ok'
+                    });
+                }
+
+            }else {
+                event.preventDefault();
+
+                Swal.fire({
+                    text: 'Niste popunili sva polja!',
+                    type: 'error',
+                    confirmButtonText: 'Ok'
+                });
+
+            }
+        }
+
+        function validateEmail(email) {
+            let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+            return re.test(String(email).toLowerCase());
+        }
 
     </script>
 

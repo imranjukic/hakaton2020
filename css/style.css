@@ -17,7 +17,8 @@ header .banner__img{
 }
 
 header {
-  background: linear-gradient(to left, #000013, #000419 95%, #000013);
+  /* background: linear-gradient(to left, #000013, #000419 95%, #000013); */
+  background: radial-gradient(circle at center, #000419 95%, #000013);
 }
 
 header video {
@@ -25,7 +26,6 @@ header video {
   width: 100%;
 }
 
- 
   header .header {
     position: absolute;
     top: 50%;

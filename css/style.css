@@ -16,6 +16,15 @@ header .banner__img{
     width: 100%;
 }
 
+header {
+  background: linear-gradient(to left, #000013, #000419 95%, #000013);
+}
+
+header video {
+  height: 100vh;
+  width: 100%;
+}
+
  
   header .header {
     position: absolute;
@@ -164,5 +173,3 @@ header .banner__img{
         font-size: 4rem;
     }
   }
-
-  

@@ -22,6 +22,8 @@
     display: inline-block;
     border-bottom: 4px solid;
     padding-bottom: 10px;
+    margin: 35px 0;
+    margin-top: 15px;
   }
   .clanTima{
     float: left;
@@ -39,6 +41,7 @@
     overflow: hidden;
     padding: 10px 0;
     transition: 0.4s;
+    
   }
   .glavni:hover{
     background:  #08375865;

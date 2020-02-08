@@ -98,8 +98,8 @@
         if (piecesSlider) {
             piecesSlider.stop();
         }
-        items[1].options.backgroundColor = 'gold';
-        items[4].options.backgroundColor = 'green';
+        items[1].options.backgroundColor = '#F9711D';
+        items[4].options.backgroundColor = '#002642';
         console.log(items);
         // Save the new Pieces instance
         piecesSlider = new Pieces({

@@ -25,7 +25,7 @@ html {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 100vh;
+  min-height: 60vh;
 }
 
 .faq .container {

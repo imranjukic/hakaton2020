@@ -33,7 +33,6 @@
 .js .pieces-slider__canvas {
 	position: relative;
 	width: 100vw;
-	height: 100vh;
 	transition: 0.2s opacity;
 }
 
@@ -41,23 +40,6 @@
 .pieces-slider__canvas--hidden {
 	opacity: 0;
 	transition-duration: 0.3s;
-}
-
-/* Navigation buttons */
-.pieces-slider__button {
-	position: absolute;
-	left: 0;
-	top: 50%;
-	width: 100px;
-	height: 100px;
-	margin: -25px 0 0 0;
-	background-color: #5104ab;
-	color: #fff;
-	font-family: inherit;
-	font-weight: bold;
-	border: none;
-	cursor: pointer;
-	transition: 0.1s background-color;
 }
 
 #drugi-slider{
@@ -91,7 +73,7 @@
 		width: 100%;
 	}
 	#drugi-canvas{
-		width: 100vW;
+		width: 100vw;
 	}
 	.donji-red{
 		flex-direction: column;

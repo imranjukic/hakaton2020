@@ -6,7 +6,8 @@ new Glide('.galerija .glide', {
   autoplay: 3000,
   breakpoints: {
     800: {
-      perView: 1
+      perView: 1,
+      peek: 75
     }
   }
 }).mount()

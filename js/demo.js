@@ -170,7 +170,6 @@
                 });
             }
         }});
-        console.log(currentTextIndex);
         // Show pieces for text and number, using alternate `ty` values
         piecesSlider.showPieces({items: currentTextIndex});
         //piecesSlider.showPieces({items: currentNumberIndex, ty: function(p, i) { return p.s_ty - [-3, 3][i % 2]; }});

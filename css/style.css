@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body{
     font-family: 'Times New Roman', Times, serif;
 }
@@ -178,6 +180,38 @@ header video {
       typing 3.5s steps(40, end),
       blink-caret .75s step-end infinite;
   }
+  .dropDown{
+    display: none;
+    position: fixed;
+    right: 15px;
+    top: 10px;
+    z-index: 1000;
+  }
+  .dropDown div{
+    width: 35px;
+    height: 6px;
+    margin: 6px 0;
+    background-color: white;
+    border: 1px solid black;
+    right: 15px;
+    top: 15px;
+    z-index: 10001;
+  }
+  #dropDown-nav{
+    display: none;
+    background-image: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0,0.6));
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    list-style: none;
+  }
+  #dropDown-nav ul li{
+    padding: 20px;
+    font-size: 24px;
+    color: white;
+  }
   @-webkit-keyframes crt-me {
     0% {
       clip: rect(31px, 9999px, 94px, 0);
@@ -266,7 +300,14 @@ header video {
       font-size: 16px;
       top: 20%;
     }
+    #navbar a{
+      display: none;
+    }
+    .dropDown{
+      display: block;
+    }
   }
+
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }

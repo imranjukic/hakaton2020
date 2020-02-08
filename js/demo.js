@@ -42,7 +42,7 @@
         piecesWidth: function() { return Pieces.random(50, 200); },
         ty: function() { return Pieces.random(-200, 200); },
         translate: function() {
-            if (windowWidth > 1120) return {translateX: 200, translateY: 200};
+            if (windowWidth > 1120) return {translateX: 200, translateY: 150};
             if (windowWidth > 720) return {translateX: 0, translateY: 200};
             return {translateX: 0, translateY: 100};
         }

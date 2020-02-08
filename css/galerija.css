@@ -1,11 +1,18 @@
 .galerija .glide {
+  background-color: #000013;
   background-color: black;
   padding: 10px;
 }
 
 .galerija-tekst {
-  background-color: #002642;
-  font-size: 2em;
+  background-color: #000013;
+  font-size: 1.5em;
   text-align: center;
-  color: white;
+  color: hsl(30, 100%, 92.5%);
+}
+
+@media screen and (max-width: 800px) {
+  .galerija-tekst {
+    font-size: 1em;
+  }
 }

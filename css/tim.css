@@ -51,6 +51,11 @@
   .slika{
     width: 100px;
     height: 100px;
+    border: #F9711D ;
+    border-style: solid ;
+    border-radius: 2px;
+    border-width: 2px;
+    
   }
   
   .imeClana{

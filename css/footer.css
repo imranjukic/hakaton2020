@@ -59,7 +59,13 @@
 }
 
 .footer-items img{
-    padding-top: 10px;
+    padding-left: 10px;
+    padding-top: 20px;
+    
+}
+
+.footer-items .slikafonis {
+    padding-left: 20px;
 }
 
 .border{

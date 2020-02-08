@@ -287,11 +287,13 @@ header video {
   }
 
   @media only screen and (max-width: 992px) {
+    
     header .banner__vid {
       display: none;
     }
     header .banner__img{
         display: block;
+        height: 100vh;
     }
     header .header h1 {
         font-size: 3.5rem;

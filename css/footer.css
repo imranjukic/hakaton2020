@@ -14,17 +14,18 @@
     background: #F9711D;
     display: block;
     font-family: 'Hind', sans-serif;
+    overflow: hidden;
 }
 
 .inner-footer{
-    width: 95%;
-    margin: auto;
-    padding: 15px 10px;
+    width: 90%;
+    padding: 15px 0px;
     padding-bottom: 5px;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
     justify-content: center;
+    overflow: hidden;
 }
 
 .footer-items {
@@ -134,9 +135,11 @@
 
 @media screen and (max-width:600px) {
     .footer-items{
-        width: 100%;
+        width: 90%;
+        overflow: hidden;
     }
-    .inner-footer{
-        margin-left: 20%;
+    .footer{
+        overflow: hidden;
     }
+    
 }

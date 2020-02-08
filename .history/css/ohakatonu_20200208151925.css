@@ -748,7 +748,7 @@ p, .tekst {
 
   .ohakatonu .tekst {
     border-style: solid;
-    border-color: #F9711D;
+    border-color: orange;
     border-width: 0.5px;
     font-size: 10px;
     border-radius: 10px;

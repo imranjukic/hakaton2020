@@ -134,8 +134,8 @@
         setInterval(() => {
             nextItem();
         }, 3000);
-        document.querySelector('.pieces-slider__button--prev').addEventListener('click', prevItem);
-        document.querySelector('.pieces-slider__button--next').addEventListener('click', nextItem);
+       // document.querySelector('.pieces-slider__button--prev').addEventListener('click', prevItem);
+       // document.querySelector('.pieces-slider__button--next').addEventListener('click', nextItem);
 
         // Select prev or next slide using arrow keys
         document.addEventListener('keydown', function (e) {
@@ -203,6 +203,7 @@
 
     // User starts resizing, so wait 300 ms before reinitialize the slider
     function resizeStart() {
+        console.log('resize poceo');
         if (initial) {
             initial = false;
             if (hideTimer) clearTimeout(hideTimer);

@@ -1,9 +1,9 @@
 (function() {
 
     // Get all images and texts, get the `canvas` element, and save slider length
-    var sliderCanvas = document.querySelector('.pieces-slider__canvas');
-    var imagesEl = [].slice.call(document.querySelectorAll('.pieces-slider__image'));
-    var textEl = [].slice.call(document.querySelectorAll('.pieces-slider__text'));
+    var sliderCanvas = document.querySelector('.gornji .pieces-slider__canvas');
+    var imagesEl = [].slice.call(document.querySelectorAll('.gornji .pieces-slider__image'));
+    var textEl = [].slice.call(document.querySelectorAll('.gornji .pieces-slider__text'));
     var slidesLength = imagesEl.length;
 
     // Define indexes related variables and functions

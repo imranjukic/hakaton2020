@@ -33,7 +33,7 @@
 .js .pieces-slider__canvas {
     position: relative;
     width: 95vw;
-    height: 100vh;
+    height: 60vh;
     transition: 0.2s opacity;
 }
 
@@ -94,7 +94,6 @@
 @media screen and (max-width: 55em) {
     .pieces-slider__canvas {
         width: 100vw;
-        height: 100vw;
     }
     .pieces-slider__button {
         width: 60px;
@@ -102,6 +101,9 @@
     }
 }
 @media screen and (max-width: 1140px) {
+    .pieces-slider__canvas{
+        height: 60vh !important;
+    }
     #drugi-slider {
         width: 100%;
     }

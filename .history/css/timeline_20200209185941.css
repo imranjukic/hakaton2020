@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Hind:300,400');
 /* *,
 *::before,
 *::after {
@@ -73,13 +72,11 @@
 }
 .timeline ul li div div h1 {
   text-align: center;
-  font-family: 'Ionicons';
   font-size: 1.5rem;
   color: rgb(255, 255, 255);
 }
 .timeline ul li div div p {
   text-align: center;
-  font-family: 'Ionicons';
   font-size: 1.15rem;
   color: rgb(192, 190, 204);
 }

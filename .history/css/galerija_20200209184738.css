@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Hind:300,400');
 .galerija .glide {
   background-color: #000013;
   background-color: black;
@@ -7,8 +6,8 @@
 
 .galerija-tekst {
   background-color: #000013;
-  font-family: 'Ionicons';
   font-size: 1.5em;
+  font-family: 'Ionicons';
   text-align: center;
   color: hsl(30, 100%, 92.5%);
 }

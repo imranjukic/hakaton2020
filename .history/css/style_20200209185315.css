@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Hind:300,400');
 *{
     margin: 0;
     padding: 0;
@@ -104,8 +103,8 @@ header video {
     content: '';
     right: 0;
     top: 0;
-    border-top: 3px solid #F9711D;
-    border-right: 3px solid #F9711D;
+    border-top: 3px solid orange;
+    border-right: 3px solid orange;
     transform: translate(-100%, 50%);
   }
   
@@ -113,8 +112,8 @@ header video {
     content: '';
     left: 0;
     bottom: 0;
-    border-bottom: 3px solid #F9711D;
-    border-left: 3px solid #F9711D;
+    border-bottom: 3px solid orange;
+    border-left: 3px solid orange;
     transform: translate(100%, -50%)
   }
   
@@ -135,14 +134,14 @@ header video {
   }
   .slogan a {
     display: block;
-    border: 4px solid #F9711D;
+    border: 4px solid orange;
     font-size: 32px;
     color: white;
     padding: 10px;
     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
   }
   .slogan a:after{
-    background: #F9711D;
+    background: orange;
     -moz-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
@@ -173,7 +172,7 @@ header video {
     color: white;
     font-size: 32px;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid #F9711D; /* The typwriter cursor */
+    border-right: .15em solid orange; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
@@ -322,5 +321,5 @@ header video {
 /* The typewriter cursor effect */
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #F9711D }
+  50% { border-color: orange }
 }

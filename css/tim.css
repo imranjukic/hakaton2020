@@ -32,9 +32,9 @@
     padding: 10px 0;
     transition: 0.4s;
   }
-  .clanTima:hover{
+  /* .clanTima:hover{
     background: #083758bb;
-  }
+  } */
   .glavni{
    
     width: 100%;
@@ -43,9 +43,9 @@
     transition: 0.4s;
     
   }
-  .glavni:hover{
+  /* .glavni:hover{
     background:  #08375865;
-  }
+  } */
   
   
   .slika{

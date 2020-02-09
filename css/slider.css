@@ -83,6 +83,7 @@
 .donji-red {
     display: flex;
     justify-content: space-between;
+    transform: translateX(-7%);
 }
 /* Media queries with styles for smaller screens */
 @media screen and (max-width: 720px) {
@@ -101,7 +102,7 @@
     }
 }
 @media screen and (max-width: 1140px) {
-    .pieces-slider__canvas{
+    .pieces-slider__canvas {
         height: 60vh !important;
     }
     #drugi-slider {
@@ -113,5 +114,6 @@
     .donji-red {
         flex-direction: column;
         justify-content: center;
+        transform: translateX(0);
     }
 }

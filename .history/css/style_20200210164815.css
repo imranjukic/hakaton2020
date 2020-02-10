@@ -70,11 +70,12 @@ header video {
   
   #navbar a {
     display: inline-block;
-    /* color: #f2f2f2; */
+    color: #f2f2f2;
     text-align: center;
     padding: 15px;
     text-decoration: none;
     font-size: 20px;
+    color: #F9711D;
   }
   #navbar *{
     transition: all .35s ease;
@@ -82,8 +83,7 @@ header video {
   
   #navbar a {
     padding: .5em .8em;
-    /* color: rgba(255,255,255,.5); */
-    color: #F9711D;
+    color: rgba(255,255,255,.5);
     position: relative;
     text-decoration: none;
     font-size: 20px;

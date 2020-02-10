@@ -7,9 +7,7 @@
   );
     text-align: center;
   }
-  
-  
-  
+
   .inner-width{
     max-width: 100%;
     margin: auto;
@@ -27,20 +25,21 @@
     margin-top: 15px;
   }
   .clanTima{
+    font-family: 'Hind', sans-serif;
     float: left;
     width: calc(100% / 3);
     overflow: hidden;
-    padding: 10px 0;
+    padding: 8px 0;
     transition: 0.4s;
   }
   /* .clanTima:hover{
     background: #083758bb;
   } */
   .glavni{
-   
+    font-family: 'Hind', sans-serif;
     width: 100%;
     overflow: hidden;
-    padding: 10px 0;
+    padding: 8px 0;
     transition: 0.4s;
     
   }
@@ -50,8 +49,8 @@
   
   
   .slika{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 160px;
     border: #F9711D ;
     border-style: solid ;
     border-radius: 2px;
@@ -60,7 +59,7 @@
   }
   
   .imeClana{
-    margin: 12px 0;
+    margin: 5px 0;
     text-transform: uppercase;
   }
   .funkcijaClana{
@@ -68,7 +67,7 @@
     color: #42BDDE;
   }
   .nalozi{
-    margin-top: 12px;
+    margin-top: 8px;
   }
   .nalozi a{
     margin: 0 4px;

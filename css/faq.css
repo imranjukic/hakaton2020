@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Hind:300,400');
 
+.body{
+  font-family: 'Hind', sans-serif !important;
+}
+
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;

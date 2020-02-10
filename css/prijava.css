@@ -4,7 +4,7 @@ body{
     text-align: center;
     background-size: cover;
     background-position: center;
-    font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Hind', sans-serif;
 
     background-image: url(/img/pozadina.png);
     background-repeat: no-repeat;
@@ -20,7 +20,7 @@ textarea {
     resize: none;
     padding-left: 10px;
     padding-right: 10px;
-    font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Hind', sans-serif;
 }
 
 h1{
@@ -91,7 +91,7 @@ h3 {
 
 ::placeholder {
     color: #42BDDE;
-    font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Hind', sans-serif;
 }
 
 .forma {

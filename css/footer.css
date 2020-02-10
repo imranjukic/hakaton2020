@@ -37,7 +37,7 @@
 
 .footer h1 {
     padding: 10px 0 ;
-    font-family: 'Ionicons';
+    font-family: 'Hind', sans-serif;
     font-size: 20px;
     color: #fff;
     font-weight: bold;
@@ -47,7 +47,7 @@
 .footer-items p{
     color: #0c66a1;
     font-size: 16px;
-    font-family: 'Ionicons';
+    font-family: 'Hind', sans-serif;
     text-align: justify;
     line-height: 25px;
     
@@ -58,7 +58,7 @@
     color: #002642;
     font-size: 20px;
     font-weight: bold;
-    font-family: 'Ionicons';
+    font-family: 'Hind', sans-serif;
     
 }
 
@@ -82,14 +82,14 @@
     color: #0c66a1;
     font-size: 16px;
     letter-spacing: 0.5px;
-    font-family: 'Ionicons';
+    font-family: 'Hind', sans-serif;
     
 }
 
 .footer ul a{
     text-decoration:none ;
     outline: none;
-    font-family: 'Ionicons';
+    font-family: 'Hind', sans-serif;
     transition: 0.4s;
 }
 

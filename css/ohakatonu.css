@@ -558,7 +558,7 @@
 }
 
 p, .tekst {
-  margin: 0 0 1.5rem;
+  margin: 0px 0px 1.5rem;
 }
 
 .ohakatonu .tekst {
@@ -567,12 +567,12 @@ p, .tekst {
   border-color: #F9711D;
   border-width: 1px;
   border-radius: 20px;
-  font-family: 'Ionicons';
+  font-family: 'Hind', sans-serif;
   font-size: 21px;
   font-weight: 400;
   line-height: 1.75;
   letter-spacing: 2px;
-  padding: 0;
+  padding: 0 ;
   color: #42BDDE;
   margin-top: 10px;
   
@@ -581,7 +581,7 @@ p, .tekst {
 
 .ohakatonu h1{
   font-size: 35px;
-  font-family: 'Ionicons';
+  font-family: 'Hind', sans-serif;
   text-align: center;
   color: #F9711D;
   margin-top: 20px;
@@ -630,7 +630,7 @@ p, .tekst {
 
   .ohakatonu h1 {
     font-size: 15px;
-    font-family: 'Ionicons';
+    font-family: 'Hind', sans-serif;
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -640,7 +640,7 @@ p, .tekst {
     border-color: #F9711D;
     border-width: 0.5px;
     font-size: 10px;
-    font-family: 'Ionicons';
+    font-family: 'Hind', sans-serif;
     border-radius: 10px;
     letter-spacing: 1px; 
     margin: 0;

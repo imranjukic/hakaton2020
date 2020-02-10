@@ -7,9 +7,7 @@
 html{
   scroll-behavior: smooth;
 }
-body{
-    font-family: 'Times New Roman', Times, serif;
-}
+
 
 header{
     position: relative;
@@ -39,7 +37,7 @@ header video {
   }
   header .header h1 {
     font-size: 8rem;
-    font-family: 'Ionicons';
+    font-family: 'Hind', sans-serif;
     color: white;
     text-align: center;
     margin-top: 0;
@@ -169,7 +167,7 @@ header video {
     top: 15%;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 600px;
+    max-width: 620px;
     color: white;
     font-size: 32px;
     overflow: hidden; /* Ensures the content is not revealed until the animation */

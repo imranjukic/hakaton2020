@@ -67,6 +67,11 @@
     padding-top: 20px;
     
 }
+.footer-items-m img{
+    /* padding-left: 10px;
+    padding-top: 20px; */
+    
+}
 
 .footer-items .slikafonis {
     padding-left: 20px;
@@ -145,7 +150,7 @@
 
 @media screen and (max-width:1085px) {
     .footer-items{
-        width: 33%;
+        width: 24%;
     }
 }
 
@@ -155,6 +160,11 @@
         overflow: hidden;
     }
     .footer{
+        overflow: hidden;
+    }
+
+    .footer-items-m{
+        width: 90%;
         overflow: hidden;
     }
     

@@ -29,12 +29,19 @@ h1{
     color: #42BDDE;
 }
 
+h4 .pravilaohakatonu{
+    text-decoration: none;
+    color: #F9711D;
+}
+
 
 h4 {
     color: #F9711D;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
+    text-decoration: none;
+   
 }
 
 .form-control

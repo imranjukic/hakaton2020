@@ -100,7 +100,6 @@
         }
         items[1].options.backgroundColor = '#F9711D';
         items[4].options.backgroundColor = '#002642';
-        console.log(items);
         // Save the new Pieces instance
         piecesSlider = new Pieces({
             canvas: sliderCanvas,
@@ -202,7 +201,6 @@
 
     // User starts resizing, so wait 300 ms before reinitialize the slider
     function resizeStart() {
-        console.log('resize poceo');
         if (initial) {
             initial = false;
             if (hideTimer) clearTimeout(hideTimer);

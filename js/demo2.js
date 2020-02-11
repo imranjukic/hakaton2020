@@ -100,7 +100,6 @@
         }
         items[1].options.backgroundColor = '#F9711D';
         items[4].options.backgroundColor = '#002642';
-        console.log(items);
         // Save the new Pieces instance
         piecesSlider = new Pieces({
             canvas: sliderCanvas,
@@ -170,7 +169,6 @@
                 });
             }
         }});
-        console.log(currentTextIndex);
         // Show pieces for text and number, using alternate `ty` values
         piecesSlider.showPieces({items: currentTextIndex});
         //piecesSlider.showPieces({items: currentNumberIndex, ty: function(p, i) { return p.s_ty - [-3, 3][i % 2]; }});

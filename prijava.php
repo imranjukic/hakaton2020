@@ -380,7 +380,9 @@
             </div>
         </div><br><br>
 
-        <h4>Svi članovi tima prihvataju da se njihovi podaci čuvaju u internoj bazi projekta.</h4>
+        <h4>Svi članovi tima prihvataju da se njihovi podaci čuvaju u internoj bazi projekta. </h4>
+        <h4>Slanjem prijave saglasni ste sa <a href="docs\hakatonPravila.pdf"><span class="pravilaohakatonu">pravilnikom.</span></a></h4>
+      
         <button id="dugme" name="submit" type="submit" class="form-control submit" onclick="prijava();">POTVRDI</button>
         <h1 id="potvrda"></h1>
         <br><br>

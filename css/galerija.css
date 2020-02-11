@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Hind:300,400');
 .galerija .glide {
-  background-color: #000013;
-  background-color: black;
+  background: 
+  radial-gradient(       
+      #002642,
+      #000013
+  );
   padding: 10px;
 }
 
 .galerija-tekst {
-  background-color: #000013;
+  background: 
+  radial-gradient(       
+      #002642,
+      #000013
+  );
   font-family: 'Hind', sans-serif;
   font-size: 1.5em;
   text-align: center;

@@ -286,7 +286,7 @@
 
 <body>
 
-    <h1>Prijava za FON Hakaton 2020</h1>
+    <h1>Prijava za Hakaton</h1>
     <h3>Svaki tim može imati 3 ili 4 člana.</h3>
 
     <div class="missing-fileds-error" style="margin-bottom: 1.5rem; color: #fff;">

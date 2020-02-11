@@ -1,7 +1,11 @@
 <?php
 
-    // $message = array();
+    /*************** MESSAGES AND ERROR BOOLEAN ***************/
+
+    $message = array();
     $error = false;
+
+    /*************** FORM FIELDS ***************/
 
     $teamName = '';
     $oldCompetitions = '';
@@ -34,6 +38,8 @@
     $member4School = '';
     $member4Year = '';
 
+    /*************** CLEAN INPUT ***************/
+
     function cleanInput($input){
         $input = trim($input);
         $input = stripslashes($input); // removes / from sting
@@ -42,7 +48,25 @@
         return $input;
     }
 
+    /*************** FORM IS SENT HANDLE IT ***************/
+
     if(isset($_POST['submit'])){
+
+        /*************** COUNT NUMBER OF REGISTRATIONS ***************/
+
+        $file = fopen('contact_data.csv', 'a+');
+        $counter = 0;
+
+        while(($data = fgetcsv($file)) !== FALSE){
+            $num = count($data);
+            if($num == 7){
+                $counter++;
+            }
+        }
+
+        $counter /= 2;
+
+        /*************** FILL VARIABLES FROM FORM INPUTS ***************/
 
         $teamName = $_POST['naziv-tima'];
         $oldCompetitions = $_POST['iskustvo'];
@@ -75,6 +99,8 @@
         $member4School = $_POST['faks/skola4'];
         $member4Year = $_POST['godina4'];
 
+        /*************** CLEAN INPUTS FROM USER ***************/
+
         $teamName = cleanInput($teamName);
         $oldCompetitions = cleanInput($oldCompetitions);
         $motivation = cleanInput($motivation);
@@ -106,6 +132,8 @@
         $member4School = cleanInput($member4School);
         $member4Year = cleanInput($member4Year);
 
+        /*************** FIELDS CAN'T BE EMPTY (EXPECT 4th USER) ***************/
+
         if(empty($teamName) || empty($oldCompetitions) || empty($motivation) || empty($teamAdvantages) || empty($giveUpSituation) || empty($googleDriveLink) 
         || empty($member1Name) || empty($member1Email) || empty($member1Phone) || empty($member1School) || empty($member1Year)
         || empty($member2Name) || empty($member2Email) || empty($member2Phone) || empty($member2School) || empty($member2Year)
@@ -113,6 +141,8 @@
             // $message['missingFields'] = '<p>Niste popunili sva polja.</p>';
             $error = true;
         }
+
+        /*************** CHECK IF MAILS ARE VALID ***************/
 
         if(!filter_var($member1Email, FILTER_VALIDATE_EMAIL) || !filter_var($member2Email, FILTER_VALIDATE_EMAIL)
         || !filter_var($member3Email, FILTER_VALIDATE_EMAIL)){
@@ -134,22 +164,22 @@
         // }
 
         if(!$error){
-            $file = fopen('contact_data.csv', 'a');
+            // $file = fopen('contact_data.csv', 'a');
             $fileBUP = fopen('contact_data_BUP.csv', 'a');
 
-            $numOfRows = count(file('contact_data.csv'));
+            // $numOfRows = count(file('contact_data.csv'));
 
             // if($numOfRows == 0){
                 fputcsv($file, ['Br.', 'Naziv Tima', 'Iskustvo', 'Zasto Ste Se Prijavili', 'Prednosti / Mane', 'Kada Bi Odustali', 'CV']);
                 fputcsv($fileBUP, ['Br.', 'Naziv Tima', 'Iskustvo', 'Zasto Ste Se Prijavili', 'Prednosti / Mane', 'Kada Bi Odustali', 'CV']);
             // }
 
-            if($numOfRows > 1){
-                $numOfRows = ($numOfRows - 1);
-            }
+            // if($numOfRows > 1){
+                // $numOfRows = ($numOfRows - 1);
+            // }
 
             $formData = array(
-                'Br.' => 69,
+                'Br.' => ++$counter,
                 'teamName' => $teamName,
                 'oldCompetitions' => $oldCompetitions,
                 'motivation' => $motivation,
@@ -214,7 +244,9 @@
                 fputcsv($fileBUP, $formData);
             }
 
-            // $message['success'] = '<p><label class="text-success">Uspešno ste se prijavili za Hakaton 2020.</label></p>';
+            $message['success'] = '<p><label class="text-success">Uspešno ste se prijavili za Hakaton 2020.</label></p>';
+            fclose($file);
+
             // $toEmail = $email;
             $subject = 'Hakaton Prijava';
             $messageEmail = 'Uspešno ste se prijavili za FON Hakaton 2020';
@@ -259,7 +291,7 @@
             $member4Year = '';
             
         }else{
-            echo "NAY!!!!!!!!!!!!!!!!!!!!!!!\n\n\n\n\n\n\n\n\n";
+            $message['error'] = '<p><label class="text-success">Došlo je do greške prilikom Vaše prijave.</label></p>';
         }
 
         // print_r($message);
@@ -292,7 +324,8 @@
     <div class="missing-fileds-error" style="margin-bottom: 1.5rem; color: #fff;">
         <?php //if(array_key_exists('missingFields', $message)) echo $message['missingFields']; ?>
         <?php //if(array_key_exists('wrongEmailFormat', $message)) echo $message['wrongEmailFormat']; ?>
-        <?php //if(array_key_exists('success', $message)) echo $message['success']; ?>
+        <?php if(array_key_exists('success', $message)) echo $message['success']; ?>
+        <?php if(array_key_exists('error', $message)) echo $message['error']; ?>
     </div>
 
     <form name="submit-to-google-sheet" method="POST">
@@ -397,16 +430,16 @@
     <script src="js/prijava.js"></script>
     <script>
 
-        function potvrda() {
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxgH_Xq8de0HcJXcIGQgc8PqAEDzfhfFnNWLrZrLLU_c_zkAV9A/exec'
-            const form = document.forms['submit-to-google-sheet']
-            form.addEventListener("submit", e => {
-                e.preventDefault()
-                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                    .then(response => console.log('Success!', response))
-                    .catch(error => console.error('Error!', error.message))
-            })
-        }
+        // function potvrda() {
+        //     const scriptURL = 'https://script.google.com/macros/s/AKfycbxgH_Xq8de0HcJXcIGQgc8PqAEDzfhfFnNWLrZrLLU_c_zkAV9A/exec'
+        //     const form = document.forms['submit-to-google-sheet']
+        //     form.addEventListener("submit", e => {
+        //         e.preventDefault()
+        //         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        //             .then(response => console.log('Success!', response))
+        //             .catch(error => console.error('Error!', error.message))
+        //     })
+        // }
 
         function prijava() {
             var gotovo = true;
@@ -433,11 +466,11 @@
                             potvrda();
                             document.getElementById('dugme').style.display = 'none'
 
-                            Swal.fire({
-                                text: 'Uspešno ste se prijavili!',
-                                type: 'success',
-                                confirmButtonText: 'Ok'
-                            })
+                            // Swal.fire({
+                            //     text: 'Uspešno ste se prijavili!',
+                            //     type: 'success',
+                            //     confirmButtonText: 'Ok'
+                            // })
                         }else{
                             event.preventDefault();
 

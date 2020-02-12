@@ -313,6 +313,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/prijava.css">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
+    <link rel='shortcut icon' type='img/png' href='img/KevinFav.png'/>
     <title>Prijava</title>
 </head>
 

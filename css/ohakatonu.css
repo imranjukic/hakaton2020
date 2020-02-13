@@ -616,7 +616,8 @@ p, .tekst {
 .ohakatonu img {
   width: 100%;
   height: 100%;
-  height: 30rem;
+  height: 23rem;
+  margin-top: 40px;
 }
 
 @media (max-width: 990px) {

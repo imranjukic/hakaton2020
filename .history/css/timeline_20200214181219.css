@@ -15,7 +15,7 @@
 } */
 .timeline {
   overflow: hidden;
-  background-color: #e6e6ff;
+  background-color: #ccccff;
 }
 .timeline ul li {
   list-style-type: none;

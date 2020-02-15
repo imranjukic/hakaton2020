@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Hind:300,400');
 
-.body{
-  font-family: 'Hind', sans-serif !important;
-}
 
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
@@ -23,7 +20,7 @@ html {
     
     margin: 0;
   padding: 0;
-  font-family: 'Hind', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #42BDDE;
   display: -webkit-box;
   display: -webkit-flex;
@@ -80,7 +77,7 @@ html {
   }
   
   .accordion a::after {
-    font-family: 'Ionicons';
+    font-family: 'Roboto', sans-serif;
     content: '+';
     position: absolute;
     float: right;
@@ -98,7 +95,7 @@ html {
   }
   
   .accordion a.active::after {
-    font-family: 'Ionicons';
+    font-family: 'Roboto', sans-serif;
     content: '-';
     color: #F9711D;
     border: 1px solid #42BDDE;

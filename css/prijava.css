@@ -5,7 +5,7 @@ body{
     text-align: center;
     background-size: cover;
     background-position: center;
-    font-family: 'Hind', sans-serif;
+    font-family: 'Roboto', sans-serif;
 
     background-image: url(/img/pozadina.png);
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@ textarea {
     resize: none;
     padding-left: 10px;
     padding-right: 10px;
-    font-family: 'Hind', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1{
@@ -99,7 +99,7 @@ h3 {
 
 ::placeholder {
     color: #42BDDE;
-    font-family: 'Hind', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .forma {

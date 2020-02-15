@@ -63,7 +63,7 @@
   color: #002642;
   font-weight: bold;
   font-size: large;
-  font-family: 'Hind', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .timeline ul li div div {
   /* height: 240px; */
@@ -74,13 +74,13 @@
 }
 .timeline ul li div div h1 {
   text-align: center;
-  font-family: 'Hind', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
   color: rgb(255, 255, 255);
 }
 .timeline ul li div div p {
   text-align: center;
-  font-family: 'Hind', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.15rem;
   color: rgb(192, 190, 204);
 }

@@ -6,7 +6,7 @@
     box-sizing: border-box;
     font-size: 18px;
     line-height: 40px;
-    font-family: 'Hind', sans-serif;
+    font-family: 'Roboto', sans-serif;
     
 }
 
@@ -14,7 +14,7 @@
     width: 100%;
     background: #F9711D;
     display: block;
-    font-family: 'Hind', sans-serif;
+    font-family: 'Roboto', sans-serif;
     overflow: hidden;
 }
 
@@ -37,7 +37,7 @@
 
 .footer h1 {
     padding: 10px 0 ;
-    font-family: 'Hind', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     color: #fff;
     font-weight: bold;
@@ -47,7 +47,7 @@
 .footer-items p{
     color: #0c66a1;
     font-size: 16px;
-    font-family: 'Hind', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: justify;
     line-height: 25px;
     
@@ -58,7 +58,7 @@
     color: #002642;
     font-size: 20px;
     font-weight: bold;
-    font-family: 'Hind', sans-serif;
+    font-family: 'Roboto', sans-serif;
     
 }
 
@@ -87,14 +87,14 @@
     color: #0c66a1;
     font-size: 16px;
     letter-spacing: 0.5px;
-    font-family: 'Hind', sans-serif;
+    font-family: 'Roboto', sans-serif;
     
 }
 
 .footer ul a{
     text-decoration:none ;
     outline: none;
-    font-family: 'Hind', sans-serif;
+    font-family: 'Roboto', sans-serif;
     transition: 0.4s;
 }
 

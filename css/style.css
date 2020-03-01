@@ -131,16 +131,18 @@ header video {
     left: 50%;
     transform: translateX(-50%);
     bottom: 20%;
-  }
-  .slogan a {
+    text-align: center;
     display: block;
     border: 4px solid #F9711D;
     font-size: 32px;
     color: white;
     padding: 10px;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
   }
-  .slogan a:after{
+  .slogan a {
+   
+    /* background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)); */
+  }
+  /* .slogan a:after{
     background: #F9711D;
     -moz-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
@@ -162,7 +164,7 @@ header video {
     -moz-transition: all 0.75s ease 0s;
     -o-transition: all 0.75s ease 0s;
     transition: all 0.75s ease 0s;
-  }
+  } */
   .typewriter h1 {
     position: absolute;
     top: 15%;

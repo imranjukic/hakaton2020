@@ -137,6 +137,11 @@ header video {
     font-size: 32px;
     color: white;
     padding: 10px;
+    background: 
+    radial-gradient(       
+        #002642,
+        #000013
+    );
   }
   .slogan a {
    

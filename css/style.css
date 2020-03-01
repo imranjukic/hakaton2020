@@ -134,7 +134,7 @@ header video {
     text-align: center;
     display: block;
     border: 4px solid #F9711D;
-    font-size: 32px;
+    font-size: 28px;
     color: white;
     padding: 10px;
     background: 
@@ -142,6 +142,7 @@ header video {
         #002642,
         #000013
     );
+    
   }
   .slogan a {
    
@@ -329,4 +330,25 @@ header video {
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: #F9711D }
+}
+
+@media screen and (max-width:1085px) {
+  .slogan{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20%;
+    text-align: center;
+    display: block;
+    border: 4px solid #F9711D;
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    background: 
+    radial-gradient(       
+        #002642,
+        #000013
+    );
+    
+  }
 }

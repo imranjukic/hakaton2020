@@ -1,0 +1,27 @@
+.ostali-partneri {
+}
+
+.ostali-partneri .glide {
+}
+
+.ostali-partneri img {
+  max-height: 20%;
+  padding: 25px;
+  margin: auto;
+}
+
+.ostali-partneri-tekst {
+  /* background: radial-gradient(#002642, #000013); */
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  color: #F9711D ;
+  /* text-transform: uppercase; */
+}
+
+
+@media screen and (max-width: 800px) {
+  .ostali-partneri .ostali-partneri-tekst {
+    font-size: 1em;
+  }
+}
